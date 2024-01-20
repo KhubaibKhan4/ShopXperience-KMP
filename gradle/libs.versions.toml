@@ -3,9 +3,9 @@
 kamelImage = "0.9.1"
 kotlin = "1.9.21"
 compose = "1.5.11"
-agp = "8.2.0"
+agp = "8.2.1"
 androidx-appcompat = "1.6.1"
-androidx-activityCompose = "1.8.1"
+androidx-activityCompose = "1.8.2"
 compose-uitooling = "1.5.4"
 ktorClientContentNegotiation = "2.3.7"
 voyager = "1.0.0"
@@ -27,6 +27,7 @@ junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 material = "1.11.0"
+size = "0.3.1"
 
 [libraries]
 
@@ -64,6 +65,9 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+voyager-tab-navigator = { module = "cafe.adriel.voyager:voyager-tab-navigator", version.ref = "voyager" }
+voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
+screen-size = { module = "dev.chrisbanes.material3:material3-window-size-class-multiplatform", version.ref = "size" }
 
 [plugins]
 
