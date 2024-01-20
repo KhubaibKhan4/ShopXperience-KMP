@@ -25,7 +25,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -35,7 +34,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import org.shop.app.data.remote.ShopApi
 import org.shop.app.theme.AppTheme
 import org.shop.app.theme.LocalThemeIsDark
 
@@ -44,10 +42,6 @@ internal fun App() = AppTheme {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisibility by remember { mutableStateOf(false) }
-    var ShopData by remember { mutableStateOf<String?>(null) }
-    LaunchedEffect(Unit){
-        ShopData=  ShopApi.getAuth()
-    }
 
     Column(modifier = Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.safeDrawing)) {
 
@@ -55,7 +49,7 @@ internal fun App() = AppTheme {
             horizontalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Login $ShopData",
+                text = "Login",
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier.padding(16.dp)
             )
