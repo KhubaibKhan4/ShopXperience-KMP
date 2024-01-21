@@ -1,7 +1,7 @@
 package org.shop.app.domain.repository
 
-import org.shop.app.data.model.Products
+import org.shop.app.data.model.ProductsItem
 
 interface ShopApi {
-    suspend fun getProducts(): Products
+    suspend fun getProducts(): List<ProductsItem>
 }

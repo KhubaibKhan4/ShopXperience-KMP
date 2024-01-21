@@ -12,7 +12,7 @@ import io.ktor.client.request.get
 import io.ktor.http.HttpHeaders
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import org.shop.app.data.model.Products
+import org.shop.app.data.model.ProductsItem
 import org.shop.app.utils.Constant.BASE_URL
 import org.shop.app.utils.Constant.TIMEOUT
 
@@ -39,7 +39,7 @@ object ShopApiClient {
             }
         }
     }
-    suspend fun getProducts(): Products{
+    suspend fun getProducts(): List<ProductsItem>{
         val url= BASE_URL+"api/v1/products"
         return client.get(url).body()
     }
