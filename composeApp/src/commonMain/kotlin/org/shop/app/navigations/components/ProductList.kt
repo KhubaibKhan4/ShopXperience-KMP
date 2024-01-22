@@ -2,6 +2,7 @@ package org.shop.app.navigations.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,6 +34,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import cafe.adriel.voyager.navigator.LocalNavigator
 import com.seiko.imageloader.rememberImagePainter
 import org.shop.app.data.model.ProductsItem
 
@@ -87,9 +89,13 @@ fun ProductList(products: List<ProductsItem>) {
 fun ProductItem(
     productsItem: ProductsItem
 ) {
+    val navigator = LocalNavigator.current
     Column(
         modifier = Modifier.fillMaxWidth()
-            .padding(6.dp),
+            .padding(6.dp)
+            .clickable {
+                navigator?.push(ProductDetail(productsItem))
+            },
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
